@@ -10,7 +10,7 @@ module.exports = function (passport) {
                 realm: 'http://www.example.com/'
             },
             function (identifier, done) {
-                User.findOrCreate({ openId: identifier }, function(err, user) {
+                User.findOrCreate({ email: identifier }, function(err, user) {
                     done(err, user);
                 });
             }
