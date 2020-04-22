@@ -13,8 +13,6 @@ const saltRounds = 10;
  
 exports.login = function (req, res) {
     res.render('loginOI', {
-        title: 'Demoing PassportJS',
-        subtitle: 'with OpenID'
     });
 };
 
