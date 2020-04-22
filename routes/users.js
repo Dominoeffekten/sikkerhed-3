@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-//const auth = require("../controllers/authController.js");
-const auth = require("../controllers/authControllerOI.js");
+const authOI = require("../controllers/authControllerOI.js");
+const auth = require("../controllers/authController.js");
 const { forwardAuthenticated } = require('../config/auth');
 
 router.get('/register', forwardAuthenticated, auth.register);
 router.post('/register', auth.postRegister);
 
-router.get('/openid', forwardAuthenticated, auth.login);
+router.get('/openid', forwardAuthenticated, authOI.login);
 //router.post('/openid', auth.openid);
-router.get('/openid/return', forwardAuthenticated, auth.postLogin);
+router.get('/openid/return', forwardAuthenticated, authOI.postLogin);
 
-router.get('/logout', auth.logout);
+router.get('/logout', authOI.logout);
 
 module.exports = router;
