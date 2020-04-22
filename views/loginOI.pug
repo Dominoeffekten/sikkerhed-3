@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    h1 Identify Yourself
+    h2 Identify Yourself
     if errors != undefined && errors.length != 0
         each error in errors
             div(role='alert' id='a1') #{error.msg}

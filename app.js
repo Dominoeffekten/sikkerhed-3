@@ -9,7 +9,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 
 // Passport Config
-require('./config/passport')(passport);
+require('./config/passportOI')(passport);
 
 // DB Config and server connect
 const db = require('./config/keys').mongoURI;

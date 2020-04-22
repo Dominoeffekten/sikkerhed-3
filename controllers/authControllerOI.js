@@ -18,7 +18,7 @@ exports.login = function (req, res) {
 
 exports.openid = function (req, res, next) {
     passport.authenticate('openid');
-    res.redirect('/users/openid/return');
+    //res.redirect('/users/openid/return');
 };
 
 exports.postLogin = function (req, res, next) {
