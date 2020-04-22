@@ -18,12 +18,13 @@ exports.login = function (req, res) {
 
 exports.openid = function (req, res, next) {
     passport.authenticate('openid');
+    res.redirect('/users/openid/return');
 };
 
 exports.postLogin = function (req, res, next) {
     passport.authenticate('openid', {
         successRedirect: '/dashboard',
-        failureRedirect: '/users/login',
+        failureRedirect: '/users/openid',
         failureFlash: true
     })(req, res, next);
 };
